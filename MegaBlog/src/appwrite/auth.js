@@ -1,5 +1,5 @@
 import conf from "../conf/config";
-import { Client, Account, Id } from 'appwrite';
+import { Client, Account, ID } from 'appwrite';
 
 export class AuthService {
     client = new Client();
@@ -13,7 +13,7 @@ export class AuthService {
     }
 
     createAccount({ email, password, name }) {
-        return this.account.create(Id.unique(), email, password, name)
+        return this.account.create(ID.unique(), email, password, name)
             .then(userAccount => {
                 if (userAccount) {
                     return this.login({ email, password });
